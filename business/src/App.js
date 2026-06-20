@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
@@ -7,16 +7,62 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
-  const [route, setRoute] = useState('home');
+  const homeRef = useRef();
+  const coursesRef = useRef();
+  const aboutRef = useRef();
+  const contactRef = useRef();
+  const [active, setActive] = useState('home');
+  const [contactPrefill, setContactPrefill] = useState(null);
+
+  const sections = [
+    { id: 'home', ref: homeRef },
+    { id: 'courses', ref: coursesRef },
+    { id: 'about', ref: aboutRef },
+    { id: 'contact', ref: contactRef },
+  ];
+
+  function scrollTo(id) {
+    const s = sections.find(x => x.id === id);
+    if (s && s.ref && s.ref.current) {
+      s.ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActive(id);
+    }
+  }
+
+  useEffect(() => {
+    const obsOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('data-section');
+          if (id) setActive(id);
+        }
+      });
+    }, obsOptions);
+
+    sections.forEach(s => {
+      if (s.ref.current) observer.observe(s.ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="App">
-      <NavBar route={route} onNavigate={setRoute} />
+      <NavBar active={active} onNavigate={scrollTo} />
       <main className="App-main">
-        {route === 'home' && <Home onNavigate={setRoute} />}
-        {route === 'courses' && <Courses />}
-        {route === 'about' && <About />}
-        {route === 'contact' && <Contact />}
+        <section ref={homeRef} data-section="home">
+          <Home onNavigate={scrollTo} />
+        </section>
+        <section ref={coursesRef} data-section="courses">
+          <Courses setContactPrefill={setContactPrefill} onNavigate={scrollTo} />
+        </section>
+        <section ref={aboutRef} data-section="about">
+          <About />
+        </section>
+        <section ref={contactRef} data-section="contact">
+          <Contact prefill={contactPrefill} />
+        </section>
       </main>
       <footer className="App-footer">
         <div className="container">© {new Date().getFullYear()} Stock Bazar Academy — All rights reserved.</div>

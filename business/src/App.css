@@ -4,18 +4,25 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
+  width: 100%;
 }
 
 .nav {
   background: #071029;
   color: #fff;
   box-shadow: 0 2px 6px rgba(2,6,23,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
@@ -25,7 +32,12 @@
 .nav-links button { background:none; border:none; color:#fff; margin-left:0.5rem; padding:0.5rem 0.75rem; cursor:pointer; }
 .nav-links button.active { background: rgba(255,255,255,0.08); border-radius:6px; }
 
-.App-main { flex:1; padding:2rem 0; }
+.App-main { 
+  flex:1; 
+  padding: 2rem 0; 
+  overflow-y: auto;
+  margin-top: 70px;
+}
 .hero { display:flex; gap:2rem; align-items:center; margin-bottom:2rem; }
 .hero-content { flex:1; }
 .hero-content h1 { font-size:clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom:0.5rem; }
