@@ -90,7 +90,9 @@ export default function Home({ onNavigate }) {
         <div className="hero">
           <div className="hero-content">
             <h1>Learn Stock Market Trading with Confidence</h1>
-            <p>Master the art of trading with practical knowledge, real-time market experience, and expert mentorship. Whether you're a beginner or an experienced trader, our programs are designed to help you make smarter, data-driven decisions in the stock market.</p>
+            <p>Master the art of trading with practical knowledge, real-time market experience, and expert mentorship. Backed by <b>7+ years of teaching experience,</b> our programs are designed to simplify complex trading concepts and help you become a confident, disciplined trader.</p>
+                
+                <p> Whether you're a beginner or an experienced trader, our programs are designed to help you make smarter, data-driven decisions in the stock market.</p>
             <p className="hero-subtext">We focus on <strong>real-world strategies</strong>, <strong>risk management</strong>, and <strong>consistent growth</strong>, so you can trade with confidence — not guesswork.</p>
             <p className="hero-cta">👉 Start your journey towards financial independence today.</p>
             <div className="hero-ctas">
