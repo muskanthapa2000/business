@@ -14,25 +14,13 @@ export default function Contact({ prefill }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function send(e) {
+  function send(e) {
     e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ to: '7022muskan@gmail.com', ...form }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus('sent');
-        setForm({ name: '', email: '', message: '' });
-      } else {
-        setStatus(data.error || 'error');
-      }
-    } catch (err) {
-      setStatus('error');
-    }
+    const subject = encodeURIComponent('Stock Bazar Academy inquiry');
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=7022muskan@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+    setStatus('opened');
   }
 
   return (
@@ -48,9 +36,7 @@ export default function Contact({ prefill }) {
         <div className="actions">
           <button className="btn primary" type="submit">Send Message</button>
         </div>
-        {status === 'sending' && <p>Sending...</p>}
-        {status === 'sent' && <p>Message sent — thank you!</p>}
-        {status && status !== 'sending' && status !== 'sent' && <p>Error: {status}</p>}
+        {status === 'opened' && <p>Please complete the email in your mail app and send it.</p>}
       </form>
     </section>
   );
