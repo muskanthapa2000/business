@@ -57,15 +57,19 @@ function App() {
         <section ref={coursesRef} data-section="courses">
           <Courses setContactPrefill={setContactPrefill} onNavigate={scrollTo} />
         </section>
-        <section ref={aboutRef} data-section="about">
+        {/* <section ref={aboutRef} data-section="about">
           <About />
-        </section>
+        </section> */}
         <section ref={contactRef} data-section="contact">
           <Contact prefill={contactPrefill} />
         </section>
       </main>
-      <footer className="App-footer">
-        <div className="container">© {new Date().getFullYear()} Stock Bazar Academy — All rights reserved.</div>
+      <footer className="App-footer"  ref={aboutRef} data-section="about">
+        <div className="container">
+              <h3>Stock Bazar Academy</h3>
+              <p>We provide practical stock market education built from real trading experience. Our programs combine live sessions, recorded lessons and mentorship to help students become consistently profitable traders.</p>
+          <div className="footer-bottom">© {new Date().getFullYear()} Stock Bazar Academy — All rights reserved.</div>
+        </div>
       </footer>
     </div>
   );

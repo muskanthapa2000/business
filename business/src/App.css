@@ -54,8 +54,8 @@
 .actions { margin-top:1rem; display:flex; gap:0.5rem; }
 
 .course-details {
-  margin-top: 1rem;
-  padding: 1.5rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
   background: #f8f9fa;
   border-left: 4px solid #0b5cff;
   border-radius: 8px;
@@ -75,28 +75,29 @@
 
 .course-details h4 {
   color: #071029;
-  font-size: 1.1rem;
-  margin: 1rem 0 0.5rem 0;
+  font-size: 0.95rem;
+  margin: 0.35rem 0 0.2rem 0;
   font-weight: 600;
 }
 
 .course-details p {
   color: #444;
-  line-height: 1.6;
-  margin: 0.5rem 0;
+  line-height: 1.5;
+  margin: 0.25rem 0;
 }
 
 .course-details ul {
   list-style: none;
   padding: 0;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.25rem 0 0.5rem 0;
 }
 
 .course-details ul li {
-  padding: 0.5rem 0 0.5rem 1.5rem;
+  padding: 0.2rem 0 0.2rem 1.5rem;
   position: relative;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .course-details ul li:before {
@@ -108,16 +109,145 @@
 }
 
 .course-details-cta {
-  margin-top: 1.5rem;
-  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
   color: #0b5cff;
   font-weight: 500;
 }
 
+/* Home Page Styles */
+.home { background: #fff; }
+
+.hero-subtext { color: #555; font-size: 1.05rem; line-height: 1.7; }
+.hero-cta { color: #0b5cff; font-size: 1.1rem; font-weight: 600; margin: 1rem 0; }
+
+.offerings { grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.offering-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(10, 10, 30, 0.06);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.offering-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(10, 10, 30, 0.12);
+}
+.offering-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+.offering-card h3 { margin: 1rem 0 0.5rem; color: #071029; }
+.offering-card p { color: #555; margin-bottom: 1rem; line-height: 1.6; }
+.offering-highlights { list-style: none; padding: 0; text-align: left; margin: 1rem 0 0; }
+.offering-highlights li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  color: #666;
+}
+.offering-highlights li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0b5cff;
+  font-weight: bold;
+}
+
+.courses-home { grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.home-course-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #0b5cff;
+  transition: all 0.3s;
+}
+.home-course-card:hover { box-shadow: 0 8px 24px rgba(10, 10, 30, 0.08); }
+.course-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.home-course-card h3 { margin: 0.5rem 0; color: #071029; }
+.home-course-card p { color: #555; line-height: 1.6; }
+.course-points { list-style: none; padding: 0; margin: 1rem 0; }
+.course-points li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  color: #666;
+  font-size: 0.95rem;
+}
+.course-points li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0b5cff;
+  font-weight: bold;
+}
+.course-cta { color: #0b5cff; font-weight: 500; margin-top: 1rem; }
+
+.why-choose { background: #f1f5fb; padding: 3rem 0; }
+.why-choose h2 { margin-bottom: 1.5rem; }
+.benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 800px; }
+.benefit-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(10, 10, 30, 0.04);
+}
+.benefit-check { font-size: 1.3rem; flex-shrink: 0; }
+.benefit-item p { color: #444; line-height: 1.6; margin: 0; }
+
+.cta-section { background: #071029; color: #fff; padding: 3rem 0; text-align: center; }
+.cta-section h2 { color: #fff; margin-bottom: 1rem; }
+.cta-section p { color: #bcd; font-size: 1.1rem; margin: 0.5rem 0; }
+.cta-highlight { color: #00d4ff; font-weight: 600; font-size: 1.2rem; margin: 1.5rem 0; }
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+
 .contact-form { display:grid; gap:0.5rem; max-width:640px; }
 .contact-form input, .contact-form textarea { padding:0.5rem; border:1px solid #ddd; border-radius:6px; }
 
-.App-footer { background:#071029; color:#bcd; padding:1rem 0; }
+.App-footer { 
+  background: #071029; 
+  color: #bcd; 
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+.footer-section p {
+  color: #9ab;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  color: #9ab;
+  padding: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #5678;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+
 
 .btn { border:0; padding:0.6rem 1rem; border-radius:6px; cursor:pointer; }
 .btn.primary { background:#0b5cff; color:#fff; }
@@ -126,5 +256,9 @@
 @media (max-width: 900px) {
   .hero { flex-direction:column-reverse; }
   .features .grid, .preview .cards, .course-list { grid-template-columns:1fr; }
+  .offerings, .courses-home { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .cta-buttons { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
   .hero-media img { max-width:100%; }
 }
