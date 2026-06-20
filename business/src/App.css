@@ -53,6 +53,67 @@
 .course h3 { margin-top:0; }
 .actions { margin-top:1rem; display:flex; gap:0.5rem; }
 
+.course-details {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-left: 4px solid #0b5cff;
+  border-radius: 8px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.course-details h4 {
+  color: #071029;
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.course-details p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.course-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.course-details ul li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.course-details ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0b5cff;
+  font-weight: bold;
+}
+
+.course-details-cta {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  color: #0b5cff;
+  font-weight: 500;
+}
+
 .contact-form { display:grid; gap:0.5rem; max-width:640px; }
 .contact-form input, .contact-form textarea { padding:0.5rem; border:1px solid #ddd; border-radius:6px; }
 
