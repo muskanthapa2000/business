@@ -1,0 +1,57 @@
+.App {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav {
+  background: #071029;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(2,6,23,0.2);
+}
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand { display:flex; align-items:center; gap:0.75rem; cursor:pointer; }
+.brand-logo { width:40px; height:40px; object-fit:cover; border-radius:6px; }
+.brand-title { font-weight:700; }
+.nav-links button { background:none; border:none; color:#fff; margin-left:0.5rem; padding:0.5rem 0.75rem; cursor:pointer; }
+.nav-links button.active { background: rgba(255,255,255,0.08); border-radius:6px; }
+
+.App-main { flex:1; padding:2rem 0; }
+.hero { display:flex; gap:2rem; align-items:center; margin-bottom:2rem; }
+.hero-content { flex:1; }
+.hero-content h1 { font-size:clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom:0.5rem; }
+.hero-content p { color:#444; margin-bottom:1rem; }
+.hero-media img { width:360px; max-width:40vw; border-radius:8px; box-shadow:0 6px 20px rgba(10,10,30,0.08); }
+.hero-ctas .btn { margin-right:0.5rem; }
+
+.features .grid, .preview .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1rem; }
+.card { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 4px 12px rgba(15,23,42,0.04); }
+
+.course-list { grid-template-columns:repeat(3,1fr); }
+.course { background:#fff; padding:1rem; border-radius:10px; box-shadow:0 6px 18px rgba(10,10,30,0.06); }
+.course h3 { margin-top:0; }
+.actions { margin-top:1rem; display:flex; gap:0.5rem; }
+
+.contact-form { display:grid; gap:0.5rem; max-width:640px; }
+.contact-form input, .contact-form textarea { padding:0.5rem; border:1px solid #ddd; border-radius:6px; }
+
+.App-footer { background:#071029; color:#bcd; padding:1rem 0; }
+
+.btn { border:0; padding:0.6rem 1rem; border-radius:6px; cursor:pointer; }
+.btn.primary { background:#0b5cff; color:#fff; }
+.btn.outline { background:transparent; border:1px solid #0b5cff; color:#0b5cff; }
+
+@media (max-width: 900px) {
+  .hero { flex-direction:column-reverse; }
+  .features .grid, .preview .cards, .course-list { grid-template-columns:1fr; }
+  .hero-media img { max-width:100%; }
+}
