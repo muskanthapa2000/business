@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 
 app.post('/api/contact', async (req, res) => {
   try {
-    const { to = process.env.TO_EMAIL || 'stockbazarjamalpur@gmail.com.com', name = '', email = '', message = '' } = req.body;
+    const { to = process.env.TO_EMAIL || 'stockbazarjamalpur@gmail.com', name = '', email = '', message = '' } = req.body;
 
     const mailOptions = {
       from: process.env.FROM_EMAIL || process.env.SMTP_USER || 'noreply@example.com',

@@ -201,16 +201,6 @@
 
 .contact-form { display:grid; gap:0.5rem; max-width:640px; }
 .contact-form input, .contact-form textarea { padding:0.5rem; border:1px solid #ddd; border-radius:6px; }
-.contact-form input:disabled, .contact-form textarea:disabled { background:#f4f6fb; }
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.input-error {
-  color: #c32f2f;
-  font-size: 0.9rem;
-  margin: 0;
-}
 
 .App-footer { 
   background: #071029; 
