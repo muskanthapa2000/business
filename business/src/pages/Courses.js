@@ -55,6 +55,24 @@ const sampleCourses = [
       cta: 'Trade smarter with controlled risk and higher potential.',
     },
   },
+  {
+    id: 4,
+    title: 'Hedge Trading',
+    desc: 'Protect capital and reduce risk with advanced hedging strategies.',
+    details: {
+      learn: [
+        'Fundamentals of hedging and why it’s essential',
+        'Protecting your portfolio in market downturns',
+        'Using options for hedging: protective puts and covered calls',
+      ],
+      included: [
+        'Real market hedging examples',
+        'Strategy-based video lessons',
+        'Live sessions with practical demonstrations',
+      ],
+      cta: 'Trade smart by focusing on protection, not just profits.',
+    },
+  },
 ];
 
 

@@ -39,7 +39,7 @@ export default function Contact({ prefill }) {
     if (!isFormValid) return;
     const subject = encodeURIComponent('Stock Bazar Academy inquiry');
     const body = encodeURIComponent(`Name: ${form.name}\nContact: ${form.contact}\n\nMessage:\n${form.message}`);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=7022muskan@gmail.com&su=${subject}&body=${body}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=stockbazarjamalpur@gmail.com.com&su=${subject}&body=${body}`;
     window.open(gmailUrl, '_blank');
     setStatus('opened');
   }
