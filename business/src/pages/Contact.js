@@ -13,7 +13,7 @@ export default function Contact({ prefill }) {
 
   useEffect(() => {
     const contactError = form.contact && !/^\d{10}$/.test(form.contact)
-      ? 'Contact number must be exactly 10 digits.'
+      ? ''
       : '';
     setErrors({ contact: contactError });
   }, [form.contact]);

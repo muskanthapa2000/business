@@ -37,53 +37,6 @@ export default function Home({ onNavigate }) {
     },
   ];
 
-  const coursesHome = [
-    {
-      icon: '📈',
-      title: "Beginner's Trading",
-      desc: 'Build a strong foundation in stock market trading. Learn how markets work, how to read charts, and how to manage risk effectively.',
-      points: [
-        'Market basics and terminology',
-        'Candlestick patterns and chart reading',
-        'Introduction to technical analysis',
-        'Risk management strategies',
-      ],
-      cta: 'Perfect for beginners starting from zero',
-    },
-    {
-      icon: '⚡',
-      title: 'Intraday Strategies',
-      desc: 'Learn how to take advantage of short-term price movements with high-probability setups.',
-      points: [
-        'Scalp and momentum trading',
-        'Entry and exit strategies',
-        'Volume and breakout analysis',
-        'Trade management techniques',
-      ],
-      cta: 'Ideal for active traders looking for daily opportunities',
-    },
-    {
-      icon: '🧠',
-      title: 'Options Trading',
-      desc: 'Master advanced trading techniques using options to generate income and protect capital.',
-      points: [
-        'Option Greeks explained simply',
-        'Spreads, straddles, and hedging strategies',
-        'Income generation techniques',
-        'Risk-controlled trading setups',
-      ],
-      cta: 'Best for traders looking to scale their strategies',
-    },
-  ];
-
-  const whyChooseUs = [
-    'Practical, real-market learning (not just theory)',
-    'Experienced mentors with proven strategies',
-    'Live sessions for hands-on experience',
-    'Focus on risk management and consistency',
-    'Community support and continuous learning',
-  ];
-
   return (
     <section className="home">
       <div className="container">

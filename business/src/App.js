@@ -1,9 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
-import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
@@ -14,12 +13,12 @@ function App() {
   const [active, setActive] = useState('home');
   const [contactPrefill, setContactPrefill] = useState(null);
 
-  const sections = [
+  const sections = useMemo(() => [
     { id: 'home', ref: homeRef },
     { id: 'courses', ref: coursesRef },
     { id: 'about', ref: aboutRef },
     { id: 'contact', ref: contactRef },
-  ];
+  ], [homeRef, coursesRef, aboutRef, contactRef]);
 
   function scrollTo(id) {
     const s = sections.find(x => x.id === id);
@@ -45,7 +44,7 @@ function App() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <div className="App">
@@ -57,9 +56,7 @@ function App() {
         <section ref={coursesRef} data-section="courses">
           <Courses setContactPrefill={setContactPrefill} onNavigate={scrollTo} />
         </section>
-        {/* <section ref={aboutRef} data-section="about">
-          <About />
-        </section> */}
+
         <section ref={contactRef} data-section="contact">
           <Contact prefill={contactPrefill} />
         </section>
