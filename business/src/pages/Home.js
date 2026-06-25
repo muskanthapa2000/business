@@ -101,7 +101,7 @@ export default function Home({ onNavigate }) {
             </div>
           </div>
           <div className="hero-media">
-            <img src="/assets/hero.svg" alt="hero" />
+            <img src="/assets/Logo.jpeg" alt="hero" />
           </div>
         </div>
       </div>

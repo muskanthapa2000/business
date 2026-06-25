@@ -5,7 +5,7 @@ export default function NavBar({ active, onNavigate }) {
     <header className="nav">
       <div className="container nav-inner">
         <div className="brand" onClick={() => onNavigate('home')}>
-          <img src="/assets/logo.svg" alt="logo" className="brand-logo" />
+          <img src="/assets/Logo.jpeg" alt="logo" className="brand-logo" />
           <span className="brand-title">Stock Bazar Academy</span>
         </div>
         <nav className="nav-links">
